@@ -1,23 +1,80 @@
-
 <html>
-  <header>
-  </header>
-  <body>
-    <h1>SpringBoot</h1>
-      Uma das formas mais indicadas de implementar um bot é usando uma arquitetura de microserviço.
-      O SpringBoot se apresenta como uma das alternativas mais acertivas como provedor dessa arquitetura.
-      SpringBoot é um projeto da Spring que veio para facilitar o processo de configuração e publicação de nossas aplicações.
-      A intenção é ter o seu projeto rodando o mais rápido possível e sem complicação.
-      Ele consegue isso favorecendo a convenção sobre a configuração. 
-      Basta que você diga pra ele quais módulos deseja utilizar (WEB, Template, Persistência, Segurança, etc.) que ele vai reconhecer e configurar.
-      Você escolhe os módulos que deseja através dos starters que inclui no pom.xml do seu projeto. Eles, basicamente, são dependências que agrupam outras dependências. Inclusive, como temos esse grupo de dependências representadas pelo starter, nosso pom.xml acaba por ficar mais organizado.
-      Apesar do Spring Boot, através da convenção, já deixar tudo configurado, nada impede que você crie as suas customizações caso sejam necessárias.
-      O maior benefício do Spring Boot é que ele nos deixa mais livres para pensarmos nas regras de negócio da nossa aplicação.
-    
-    
-    
-    
-    
+    <header>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Telegram Bot Guia de Referência</title>
+    </header>
+    <body>
+        <div class="container-fluid" style="background-color: whitesmoke; height: 102px;">
+            <div class="container">
+                <div class="row col-md-12" >
+                    <div style="float: left">
+                        <img src="https://www.telegram.org/img/t_logo.png" style="width: 70px; height: 70px; margin-top: 17px;"/>
+                    </div>
+                    <div style="float: left; margin-left: 5px;">
+                        <h1 style="text-shadow: 2px 2px 2px #676565; color: #3fbbe4;">Goiás Telegram Bot</h1>
+                        <h4 style="color: #4C4949 ;padding-left: 8px;margin-top: -10px;text-shadow: 1px 1px 3px #474747;">Guia de Referência</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row col-md-12" >
+                    <h3 id="obot" >O que é um Bot?</h3>
+                    <p style="text-align: justify" >Com o crescimento das redes sociais e as constantes mudanças de paradigmas da sociedade o uso de ferramentas de mensagens instantâneas esta cada vez mais frequentes.<br>
+                       Recentemente um novo conceito foi criado nessas ferramentas, são os chamados “BOT” abreviação de "robot").<br>
+                       Que são bots? Em uma definição simples, são peças de software, que conversam com os usuários em termos humanos onde um aplicativo passa a ser um contato no aplicativo de mensageria onde a iteração pode ser de forma natural e não estruturada, mas ainda não estão aptos a passar pelo famoso teste de Turing, mas já permitem uma razoável interatividade.<br>
+                    </p>
+                    <h3 id="porquebot">Porque usar Bots?</h3>
+                    <p style="text-align: justify">
+                        Os bots têm o propósito de diminuir a profusão de aplicativos, onde o usuário necessita usar centenas de apps, cada um com suas próprias peculiaridades, quanto mais apps instalados, mais recursos eles consomem do seu aparelho. Assim, os bots são ótimos para quem tem aparelhos mais simples, com pouco espaço e bateria pouco duradoura. <br>
+                        O aplicativo que comporta seu bot, acaba fazendo o papel de vários apps juntos.
+                    </p>
+                    <h3 id="microservico">Bot como Micro Serviço</h3>
+                    <p style="text-align: justify">Uma das formas mais indicadas de implementar um bot é usando uma arquitetura de microserviço, onde o SpringBoot se destaca como uma das alternativas mais indicadas para essa arquitetura, springBoot é um projeto da Spring que veio para facilitar o processo de configuração e publicação de nossas aplicações.</p>
+                        A intenção é ter o seu bot rodando o mais rápido possível e sem complicação, ele consegue isso favorecendo a convenção sobre a configuração.<br>
+                        Basta que você diga pra ele quais módulos deseja utilizar (WEB, Template, Persistência, Segurança, etc.) que ele vai reconhecer e configurar.
+                        Você escolhe os módulos que deseja através dos starters que inclui no pom.xml do seu projeto. Eles, basicamente, são dependências que agrupam outras dependências. Inclusive, como temos esse grupo de dependências representadas pelo starter, nosso pom.xml acaba por ficar mais organizado.
+                        Apesar do Spring Boot, através da convenção, já deixar tudo configurado, nada impede que você crie as suas customizações caso sejam necessárias.
+                        O maior benefício do Spring Boot é que ele nos deixa mais livres para pensarmos nas regras de negócio da nossa aplicação.
+                    </p>
+                    <h3 id="criandobot">Criando seu bot</h3>
+                    <p style="text-align: justify">Antes de mais nada obviamente deverá ter instalado o telegram no celular que será o owner(dono do seu bot). <br>
+                        Vale lembrar que o telegram não transfere titularidade de bots por não ter um fim corporativo específico então sugerimo como uma boa prática usar um celular corporativo
+                        para registrar os bots corporativos, e que esse celular(linha/numero) não seja perdido, pois o domínio desses bots serão perdidos.
+                        Com o telegram devidamente instalado, como na <a href="#figura1">figura1</a> , procure um bot com o nome de @BotFather (esse seria uma espécie de gerenciador dos seus bots).
+                        Feito isso clique em começar como na <a href="#figura2">figura2</a>
+                        Quando iniciado será apresentado os principais comandos do bot como na <a href="#figura3">figura3</a>
+                    </p>
+                    <div class="row col-md-12" style="margin-top: -1px;">
+                        <img id="figura1" style="float:left ;border-style: solid;border-color: #676565; border-width: 1px;" src ="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbeUGsHCfpoqhZhHKEP6TbHPhwFcGjpG9j5psBHrMQj6SHJ2sJgQ" title="figura1"/>
+                        <img id="figura2" style="float:left ;vertical-align:top; border-style: solid;border-color: #676565;border-width: 1px;   " src="http://www.100security.com.br/wp-content/uploads/2016/05/z06.jpg" title="figura2"/>
+                        <img id="figura3" style="float:left ;vertical-align:top; border-style: solid;border-color: #676565;border-width: 1px; width: 510px;" src="http://developer.syn.co.in/tutorial/templates/images/telegram-newbot.png" title="figura3"/>
+                    </div>
+                    <p style="text-align: justify">
+                        Inicie a criação do bot através do comando <bold><code>/newbot</code></bold> , duas perguntas serão feitas: Nome do bot (poderá ser qualquer nome desde que ainda não utilizado) e Username do bot (deverá terminar com a a palavra Bot ou _bot, exigência do telegram um exemplo: GoiasBot or goias_bot.),<br>
+                        Feito isso o botfather retornará uma chave de registro do seu bot exemplo:<code>397462612:AAEpneyFBkCMww14c-5BSYOuqjIqtmTqfgc</code>.<br>
+                        Guarde essa chave e não passe pra ninguem para evitar transtornos, mas se caso vazar, não se desespere, o botfather tem opção de revogar a chave e criar uma nova, mas somente o owner do bot poderá faze-lo.<br>
+                        Outros comandos que serão primordiais para a identificação do seu bot estão descritos abaixo, lembro que para cada comando o botfather pergunta para qual bot você gostaria de executar a ação listando os seus bots já registrados<br>
+                        <code>/setdescription</code> - use para informar a descrição do seu bot. exemplo: Este Bot te informa as condições metereológicas da sua cidade em tempo real.<br>
+                        <code>/setname</code> - use caso queira mudar o nome do seu bot.<br>
+                        <code>/setabouttext</code> - use para descrever informações descritivas, legais e normas de uso.<br>
+                        <code>/setuserpic</code> - use para informar uma imagem (avatar) do seu bot.<br>
+                        <code>/setcommands</code>  - para descrever comandos disponíveis no seu bot, infelizmente não e possível adicionar comandos em separado, por isso ao executar essa ação tenha em mente já todos os comandos possíveis que seu bot terá, pois caso queira entrar depois com um novo comando, deverá passar novamente todos os comandos, pois ele remove os anteriores ao executar essa ação novamente.
+                        os comandos deverão ser exatamente informados da seguinte forma:<br>
+                        comando1 - descrição do comando2<br>
+                        comando2 - descrição do comando2<br>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
     
     
     
